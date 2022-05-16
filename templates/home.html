@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Dictionary</title>
+    </head>
+    <body>
+        <form action="predict" method="post">
+            <label for="word">Enter Word:</label>
+            <input type="text" name="word" placeholder="Enter word">
+            <br>
+            <br>
+            <button type="submit">Meaning</button>   
+            <br>
+            <br>
+            {% if output %}
+                {% for sent in output %}
+                <h3>{{loop.index}}.{{sent}}</h3>
+                <br>
+                {% endfor %}
+            <br>
+            <br>
+            <a href="/">Home</a>
+            {% endif %}
+        </form>
+    </body>
+</html>
