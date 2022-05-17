@@ -12,11 +12,8 @@ def home():
 @app.route("/predict", methods=['POST'])
 def predict():
     words = str(request.form.get('word'))
-    print(words)
     final_words = Word(words)
     meaning = final_words.definitions
-    print(meaning)
-    print(type(meaning))
     return render_template('home.html', output=meaning,)
 
 if __name__ == '__main__':
